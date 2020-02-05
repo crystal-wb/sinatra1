@@ -29,6 +29,10 @@ get "/getdoc" do
   </html>'
 end
 
+get '/login.html' do
+    'another method'
+end
+
 post '/logon' do
     name = params[:username]
     pass = params[:password]
