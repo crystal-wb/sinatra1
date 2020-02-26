@@ -1,5 +1,6 @@
 require 'sinatra'  
 enable :sessions
+# ruby sinatra1.rb -o $IP -p $PORT
 get '/' do
     if session[:name]
         "Welcome back to the Sinatra lesson #{session[:name]}"
@@ -58,6 +59,16 @@ post '/hello' do
 end
 
 get '/greet' do
+    # "Hello, so happy to meet you, " + session[:name]
     "Hello, so happy to meet you, #{session[:name]}"
+end
+
+get '/howmany' do
+   erb :howmany
+end
+
+post '/candles' do
+    @number = params[:number].to_i
+   erb :candles
 end
 

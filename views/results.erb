@@ -1,0 +1,8 @@
+<a href='/howmany'>Add candles</a>
+<% @results.each do |row| %>
+ <p>Number of candles: <%= row[1] %></p>
+<br>
+ <% row[1].to_i.times do %>
+  <img src="candle.jpg"></img>
+ <% end %>
+<% end %>
